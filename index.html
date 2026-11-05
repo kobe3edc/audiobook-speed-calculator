@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audiobook Speed Calculator — Free Listening Time Tool</title>
+<meta name="description" content="Free audiobook speed calculator: enter book length and playback speed to see real listening time and hours saved. Works for Audible, Spotify, Libby, and more."/>
+<meta name="keywords" content="audiobook speed calculator, listening time calculator, audiobook playback speed, time saved calculator"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://audiobookspeedcalculator.net/"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<meta property="og:title" content="Audiobook Speed Calculator — Free Listening Time Tool"/>
+<meta property="og:description" content="Calculate actual listening time and hours saved at any audiobook playback speed. Free, no sign-up."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://audiobookspeedcalculator.net/"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Audiobook Speed Calculator — Free Listening Time Tool"/>
+<meta name="twitter:description" content="Enter audiobook length and speed to see listening time and hours saved."/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X0RVS4D5VV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X0RVS4D5VV');
+</script>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config directly verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#6063ee",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-background": "#131b2e",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-primary-container": "#fffbff",
+            "on-tertiary-container": "#000703",
+            "secondary-container": "#8455ef",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface": "#faf8ff",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary": "#6b38d4",
+            "tertiary": "#006c49",
+            "on-surface-variant": "#464554",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#5516be",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#fffbff",
+            "background": "#faf8ff",
+            "surface-tint": "#494bd6",
+            "on-secondary-fixed": "#23005c",
+            "surface-container": "#eaedff",
+            "tertiary-fixed": "#6ffbbe",
+            "primary-fixed": "#e1e0ff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#07006c",
+            "surface-container-highest": "#dae2fd",
+            "outline-variant": "#c7c4d7",
+            "secondary-fixed-dim": "#d0bcff",
+            "primary": "#4648d4",
+            "on-tertiary-fixed": "#002113",
+            "tertiary-container": "#00885d",
+            "inverse-primary": "#c0c1ff",
+            "surface-container-low": "#f2f3ff",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "surface-variant": "#dae2fd",
+            "outline": "#767586",
+            "secondary-fixed": "#e9ddff",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "surface-bright": "#faf8ff",
+            "inverse-surface": "#283044"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "metric-display-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "metric-display": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "display": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "metric-display-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "metric-display": ["44px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 9999px;
+      background: #4648d4;
+      cursor: pointer;
+      box-shadow: 0 0 0 4px #e1e0ff;
+      transition: transform 0.1s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+    }
+
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar (Shared Component implementation) -->
+<header class="bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-md text-primary dark:text-inverse-primary docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16 w-full">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2.5 text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed active:scale-[0.98] transition-transform duration-100" href="#calculator">
+<span class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="headphones">headphones</span>
+</span>
+<span class="tracking-tight">AudioSpeed</span>
+</a>
+<!-- Navigation Links (Active state: Calculator) -->
+<nav class="hidden md:flex items-center gap-8 text-label-lg font-label-lg">
+<a class="text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#calculator">Calculator</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="#presets">Presets</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="#how-it-works">How It Works</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="#faq">FAQ</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<span class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+          100% Free · No Sign-up
+        </span>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-lg text-label-lg hover:bg-primary-container active:scale-[0.98] transition-all shadow-sm" href="#calculator">
+          Calculate Now
+        </a>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="pt-12 pb-8 px-6 text-center max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold mb-5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="bolt">bolt</span>
+<span>Instant &amp; Free Audiobook Calculator</span>
+</div>
+<h1 class="text-display font-display text-on-surface tracking-tight mb-4 text-center">
+        Audiobook Speed Calculator
+      </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Calculate your actual listening time and see exactly how many hours you save at faster playback speeds.
+      </p>
+</section>
+<!-- Core Interactive Calculator Canvas (840px ergonomic container) -->
+<section class="px-6 py-6 max-w-[840px] mx-auto" id="calculator">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-6 md:p-8 shadow-[0_10px_25px_-5px_rgba(70,72,212,0.08)] transition-all">
+<!-- Input Row: Book Duration -->
+<div class="mb-8">
+<div class="flex items-center justify-between mb-3">
+<label class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+              Original Book Duration
+            </label>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Check length in Audible/Spotify</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Hours Field -->
+<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 flex items-center justify-between focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">HOURS</span>
+<input class="w-24 bg-transparent text-headline-md font-headline-md text-on-surface font-bold border-none p-0 focus:ring-0" id="input-hours" max="200" min="0" type="number" value="12"/>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-xs active:scale-95 transition-all" onclick="adjustValue('input-hours', -1)" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-xs active:scale-95 transition-all" onclick="adjustValue('input-hours', 1)" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Minutes Field -->
+<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 flex items-center justify-between focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">MINUTES</span>
+<input class="w-24 bg-transparent text-headline-md font-headline-md text-on-surface font-bold border-none p-0 focus:ring-0" id="input-minutes" max="59" min="0" type="number" value="30"/>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-xs active:scale-95 transition-all" onclick="adjustValue('input-minutes', -5)" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-xs active:scale-95 transition-all" onclick="adjustValue('input-minutes', 5)" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Duration Presets -->
+<div class="flex flex-wrap items-center gap-2 mt-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant mr-1">Popular lengths:</span>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="setDuration(4, 0)" type="button">4h (Short)</button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="setDuration(8, 30)" type="button">8h 30m (Standard)</button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="setDuration(12, 30)" type="button">12h 30m (Novel)</button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="setDuration(24, 0)" type="button">24h (Epic)</button>
+<button class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors" onclick="setDuration(45, 0)" type="button">45h+ (Fantasy)</button>
+</div>
+</div>
+<!-- Speed Controls Section -->
+<div class="mb-8 pt-6 border-t border-outline-variant/30" id="presets">
+<div class="flex items-center justify-between mb-4">
+<label class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+              Playback Speed
+            </label>
+<span class="px-3 py-1 bg-primary text-on-primary rounded-full font-label-lg text-label-lg font-bold" id="speed-display-badge">1.50x</span>
+</div>
+<!-- Slider -->
+<div class="mb-5 px-1">
+<input class="w-full h-2.5 bg-surface-container-high rounded-full appearance-none cursor-pointer outline-none" id="speed-slider" max="3.0" min="1.0" step="0.05" type="range" value="1.5"/>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mt-2 px-1">
+<span>1.0x (Normal)</span>
+<span>1.5x</span>
+<span>2.0x</span>
+<span>2.5x</span>
+<span>3.0x</span>
+</div>
+</div>
+<!-- Quick Presets Pill Cluster -->
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+<button class="speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all" data-speed="1.25" onclick="setSpeed(1.25)" type="button">1.25x</button>
+<button class="speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-primary-fixed border border-primary text-primary font-bold transition-all shadow-xs" data-speed="1.50" onclick="setSpeed(1.50)" type="button">1.50x</button>
+<button class="speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all" data-speed="1.75" onclick="setSpeed(1.75)" type="button">1.75x</button>
+<button class="speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all" data-speed="2.00" onclick="setSpeed(2.00)" type="button">2.00x</button>
+<button class="speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all" data-speed="2.20" onclick="setSpeed(2.20)" type="button">2.20x</button>
+<button class="speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all" data-speed="2.50" onclick="setSpeed(2.50)" type="button">2.50x</button>
+</div>
+</div>
+<!-- Prominent Results Display Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<!-- Card 1: New Listening Time -->
+<div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-md font-label-md text-on-surface-variant font-semibold">NEW LISTENING TIME</span>
+<span class="material-symbols-outlined text-primary" data-icon="headphones">headphones</span>
+</div>
+<div class="text-metric-display font-metric-display text-on-surface my-2" id="new-duration-display">
+                8h 20m
+              </div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mb-1.5">
+<span>Listening progress compression</span>
+<span class="font-bold text-primary" id="speed-ratio-pct">67% of original</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-300" id="progress-bar-fill" style="width: 67%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: Time Saved with Emerald/Teal Accent -->
+<div class="bg-surface-container-lowest rounded-lg p-5 border border-outline-variant/40 shadow-[0_0_16px_-2px_rgba(0,108,73,0.15)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-md font-label-md text-on-surface-variant font-semibold">TIME SAVED</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+<span id="pct-saved-badge">33% faster</span>
+</span>
+</div>
+<div class="text-metric-display font-metric-display text-tertiary my-2" id="time-saved-display">
+                4h 10m
+              </div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="check_circle">check_circle</span>
+<span>Finish in <span class="font-semibold text-on-surface" id="days-equivalent">1-2 days</span> at standard reading pace</span>
+</div>
+</div>
+</div>
+<!-- Quick Comparison Breakdown Chips -->
+<div class="pt-5 border-t border-outline-variant/30">
+<div class="text-label-sm font-label-sm text-on-surface-variant font-semibold mb-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="compare_arrows">compare_arrows</span>
+            SPEED COMPARISON FOR THIS BOOK
+          </div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+<div class="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-on-surface-variant">At 1.25x</div>
+<div class="text-body-md font-body-md font-bold text-on-surface mt-0.5" id="comp-125">10h 00m</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-on-surface-variant">At 1.50x</div>
+<div class="text-body-md font-body-md font-bold text-on-surface mt-0.5" id="comp-150">8h 20m</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-on-surface-variant">At 1.75x</div>
+<div class="text-body-md font-body-md font-bold text-on-surface mt-0.5" id="comp-175">7h 08m</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/20">
+<div class="text-label-sm font-label-sm text-on-surface-variant">At 2.00x</div>
+<div class="text-body-md font-body-md font-bold text-on-surface mt-0.5" id="comp-200">6h 15m</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section (3 steps) -->
+<section class="py-16 px-6 max-w-7xl mx-auto" id="how-it-works">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">How It Works</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Three simple steps to calculate your saved listening time and accelerate your reading checklist.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 flex flex-col justify-between shadow-xs">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined" data-icon="hourglass_top">hourglass_top</span>
+</div>
+<div class="text-label-sm font-label-sm text-primary font-bold mb-1">STEP 1</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Enter Length</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Input the unabridged runtime in hours and minutes from Audible, Spotify, Libby, or Storytel.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="check">check</span>
+            Compatible with all formats
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 flex flex-col justify-between shadow-xs">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</div>
+<div class="text-label-sm font-label-sm text-primary font-bold mb-1">STEP 2</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Pick Playback Speed</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Select your comfortable listening multiplier between 1.0x and 3.0x using the slider or preset chips.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="check">check</span>
+            Fine-grained 0.05x precision
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 flex flex-col justify-between shadow-xs">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="text-label-sm font-label-sm text-primary font-bold mb-1">STEP 3</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">See Your Savings</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Instantly see the exact listening time and total hours saved to plan your reading goals with confidence.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="check">check</span>
+            Live real-time calculations
+          </div>
+</div>
+</div>
+</section>
+<!-- Speed Cheat-Sheet / Matrix -->
+<section class="py-12 px-6 max-w-5xl mx-auto" id="speed-charts">
+<div class="bg-surface-container-low rounded-xl p-6 md:p-8 border border-outline-variant/30">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
+<div>
+<div class="text-label-sm font-label-sm text-primary font-bold uppercase tracking-wider mb-1">REFERENCE GUIDE</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Audiobook Speed Cheat-Sheet</h2>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Standard audio lengths compared at common speeds</span>
+</div>
+<!-- Matrix Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/40">
+<th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">Original Length</th>
+<th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">1.25x Speed</th>
+<th class="py-3 px-4 text-label-md font-label-md text-primary font-bold">1.50x Speed (Optimal)</th>
+<th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">1.75x Speed</th>
+<th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">2.00x Speed</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-body-sm font-body-sm">
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-3.5 px-4 font-bold text-on-surface">8 Hours <span class="text-label-sm font-label-sm text-on-surface-variant font-normal">(Short Read)</span></td>
+<td class="py-3.5 px-4 text-on-surface">6h 24m <span class="text-tertiary text-label-sm font-label-sm block">Save 1h 36m</span></td>
+<td class="py-3.5 px-4 font-semibold text-primary bg-primary-fixed/30 rounded">5h 20m <span class="text-tertiary text-label-sm font-label-sm block">Save 2h 40m</span></td>
+<td class="py-3.5 px-4 text-on-surface">4h 34m <span class="text-tertiary text-label-sm font-label-sm block">Save 3h 26m</span></td>
+<td class="py-3.5 px-4 text-on-surface">4h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 4h 00m</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-3.5 px-4 font-bold text-on-surface">12 Hours <span class="text-label-sm font-label-sm text-on-surface-variant font-normal">(Standard Book)</span></td>
+<td class="py-3.5 px-4 text-on-surface">9h 36m <span class="text-tertiary text-label-sm font-label-sm block">Save 2h 24m</span></td>
+<td class="py-3.5 px-4 font-semibold text-primary bg-primary-fixed/30 rounded">8h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 4h 00m</span></td>
+<td class="py-3.5 px-4 text-on-surface">6h 51m <span class="text-tertiary text-label-sm font-label-sm block">Save 5h 09m</span></td>
+<td class="py-3.5 px-4 text-on-surface">6h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 6h 00m</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-3.5 px-4 font-bold text-on-surface">20 Hours <span class="text-label-sm font-label-sm text-on-surface-variant font-normal">(Long Non-Fiction)</span></td>
+<td class="py-3.5 px-4 text-on-surface">16h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 4h 00m</span></td>
+<td class="py-3.5 px-4 font-semibold text-primary bg-primary-fixed/30 rounded">13h 20m <span class="text-tertiary text-label-sm font-label-sm block">Save 6h 40m</span></td>
+<td class="py-3.5 px-4 text-on-surface">11h 25m <span class="text-tertiary text-label-sm font-label-sm block">Save 8h 35m</span></td>
+<td class="py-3.5 px-4 text-on-surface">10h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 10h 00m</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-3.5 px-4 font-bold text-on-surface">30 Hours <span class="text-label-sm font-label-sm text-on-surface-variant font-normal">(Epic Fantasy / Bio)</span></td>
+<td class="py-3.5 px-4 text-on-surface">24h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 6h 00m</span></td>
+<td class="py-3.5 px-4 font-semibold text-primary bg-primary-fixed/30 rounded">20h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 10h 00m</span></td>
+<td class="py-3.5 px-4 text-on-surface">17h 08m <span class="text-tertiary text-label-sm font-label-sm block">Save 12h 52m</span></td>
+<td class="py-3.5 px-4 text-on-surface">15h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 15h 00m</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion Section -->
+<section class="py-16 px-6 max-w-4xl mx-auto" id="faq">
+<div class="text-center mb-10">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Frequently Asked Questions</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Everything you need to know about listening faster without losing comprehension.</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 open:shadow-xs transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none text-headline-sm font-headline-sm text-on-surface font-semibold">
+<span>Does changing speed distort the narrator's pitch?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant pt-2 border-t border-outline-variant/20">
+            No. Modern audiobook and podcast apps (Audible, Spotify, Apple Books, Libby) use pitch correction algorithms. When you speed up the recording, the pitch stays natural rather than sounding high-pitched or "chipmunk-like."
+          </div>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 open:shadow-xs transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none text-headline-sm font-headline-sm text-on-surface font-semibold">
+<span>What is the ideal listening speed for comprehension and retention?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant pt-2 border-t border-outline-variant/20">
+            Cognitive studies show that speeds between 1.25x and 1.5x provide virtually identical recall rates compared to 1.0x for conversational English narration. Above 1.75x, comprehension slightly drops unless you build up tolerance gradually over several chapters.
+          </div>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 open:shadow-xs transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none text-headline-sm font-headline-sm text-on-surface font-semibold">
+<span>Is this calculator free or does it require an account?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant pt-2 border-t border-outline-variant/20">
+            AudioSpeed is 100% free with no paywall, no credit card, and zero registration required. Bookmark this page whenever you need quick book pacing or listening calculations.
+          </div>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 open:shadow-xs transition-all">
+<summary class="flex justify-between items-center cursor-pointer list-none text-headline-sm font-headline-sm text-on-surface font-semibold">
+<span>Which apps allow custom playback speeds?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant pt-2 border-t border-outline-variant/20">
+            Virtually every leading audiobook service supports custom speed settings:
+            <ul class="list-disc list-inside mt-2 space-y-1">
+<li><strong>Audible:</strong> 0.5x to 3.5x in 0.05x or 0.1x increments</li>
+<li><strong>Spotify:</strong> 0.5x to 3.5x increments</li>
+<li><strong>Libby / OverDrive:</strong> 0.6x to 3.0x custom speeds</li>
+<li><strong>Apple Books &amp; Storytel:</strong> Variable stepping dials</li>
+</ul>
+</div>
+</details>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component implementation) -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/30 dark:border-outline/20">
+<div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 w-full">
+<!-- Brand & Copyright -->
+<div class="flex flex-col items-center md:items-start gap-1">
+<div class="flex items-center gap-2 text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="headphones">headphones</span>
+<span>AudioSpeed</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-inverse-on-surface/80">
+          © 2026 AudioSpeed Calculator. 100% Free, no account or credit card required.
+        </p>
+<span class="text-label-sm font-label-sm text-on-surface-variant/70">
+          Free tool built for avid listeners and bookworms.
+        </span>
+</div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center items-center gap-6 text-label-md font-label-md">
+<a class="text-primary dark:text-primary-fixed font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#calculator">Calculator</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface/80 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#speed-charts">Speed Charts</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface/80 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#how-it-works">How It Works</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface/80 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#faq">FAQ</a>
+</div>
+</div>
+</footer>
+<!-- Vanilla JS Engine for Live Calculation -->
+<script>
+    let currentSpeed = 1.50;
+
+    function formatTime(totalMinutes) {
+      const hrs = Math.floor(totalMinutes / 60);
+      const mins = Math.round(totalMinutes % 60);
+      return `${hrs}h ${mins.toString().padStart(2, '0')}m`;
+    }
+
+    function calculate() {
+      const hours = parseInt(document.getElementById('input-hours').value) || 0;
+      const minutes = parseInt(document.getElementById('input-minutes').value) || 0;
+      const originalTotalMins = (hours * 60) + minutes;
+
+      if (originalTotalMins <= 0) return;
+
+      // Calculate new time
+      const newTotalMins = originalTotalMins / currentSpeed;
+      const savedMins = originalTotalMins - newTotalMins;
+      const pctSaved = Math.round(((originalTotalMins - newTotalMins) / originalTotalMins) * 100);
+      const ratioPct = Math.round((newTotalMins / originalTotalMins) * 100);
+
+      // Update DOM
+      document.getElementById('new-duration-display').innerText = formatTime(newTotalMins);
+      document.getElementById('time-saved-display').innerText = formatTime(savedMins);
+      document.getElementById('pct-saved-badge').innerText = `${pctSaved}% faster`;
+      document.getElementById('speed-ratio-pct').innerText = `${ratioPct}% of original`;
+      document.getElementById('progress-bar-fill').style.width = `${Math.min(100, ratioPct)}%`;
+      document.getElementById('speed-display-badge').innerText = `${currentSpeed.toFixed(2)}x`;
+
+      // Update comparison chips
+      document.getElementById('comp-125').innerText = formatTime(originalTotalMins / 1.25);
+      document.getElementById('comp-150').innerText = formatTime(originalTotalMins / 1.50);
+      document.getElementById('comp-175').innerText = formatTime(originalTotalMins / 1.75);
+      document.getElementById('comp-200').innerText = formatTime(originalTotalMins / 2.00);
+
+      // Estimate days
+      const hoursNew = newTotalMins / 60;
+      if (hoursNew <= 5) {
+        document.getElementById('days-equivalent').innerText = '1 day';
+      } else if (hoursNew <= 12) {
+        document.getElementById('days-equivalent').innerText = '2-3 days';
+      } else if (hoursNew <= 25) {
+        document.getElementById('days-equivalent').innerText = '4-6 days';
+      } else {
+        document.getElementById('days-equivalent').innerText = '1-2 weeks';
+      }
+    }
+
+    function setSpeed(val) {
+      currentSpeed = parseFloat(val);
+      document.getElementById('speed-slider').value = currentSpeed;
+      
+      // Update chip styles
+      document.querySelectorAll('.speed-pill').forEach(btn => {
+        const btnSpeed = parseFloat(btn.getAttribute('data-speed'));
+        if (Math.abs(btnSpeed - currentSpeed) < 0.01) {
+          btn.className = "speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-primary-fixed border border-primary text-primary font-bold transition-all shadow-xs";
+        } else {
+          btn.className = "speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all";
+        }
+      });
+      calculate();
+    }
+
+    function setDuration(h, m) {
+      document.getElementById('input-hours').value = h;
+      document.getElementById('input-minutes').value = m;
+      calculate();
+    }
+
+    function adjustValue(id, delta) {
+      const input = document.getElementById(id);
+      let val = parseInt(input.value) || 0;
+      val = Math.max(0, val + delta);
+      if (id === 'input-minutes' && val >= 60) {
+        const hoursInput = document.getElementById('input-hours');
+        hoursInput.value = (parseInt(hoursInput.value) || 0) + Math.floor(val / 60);
+        val = val % 60;
+      }
+      input.value = val;
+      calculate();
+    }
+
+    // Event listeners
+    document.getElementById('input-hours').addEventListener('input', calculate);
+    document.getElementById('input-minutes').addEventListener('input', calculate);
+    document.getElementById('speed-slider').addEventListener('input', (e) => {
+      setSpeed(e.target.value);
+    });
+
+    // Initial calculation run
+    calculate();
+  </script>
+</body></html>
