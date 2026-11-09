@@ -16,155 +16,13 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Audiobook Speed Calculator — Free Listening Time Tool"/>
 <meta name="twitter:description" content="Enter audiobook length and speed to see listening time and hours saved."/>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X0RVS4D5VV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-X0RVS4D5VV');
-</script>
-<!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts: Plus Jakarta Sans & Inter -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS v3 -->
+<link href="/site.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Config directly verbatim -->
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "primary-container": "#6063ee",
-            "on-error-container": "#93000a",
-            "error": "#ba1a1a",
-            "on-background": "#131b2e",
-            "surface-container-lowest": "#ffffff",
-            "inverse-on-surface": "#eef0ff",
-            "tertiary-fixed-dim": "#4edea3",
-            "on-primary-container": "#fffbff",
-            "on-tertiary-container": "#000703",
-            "secondary-container": "#8455ef",
-            "on-tertiary": "#ffffff",
-            "on-tertiary-fixed-variant": "#005236",
-            "surface": "#faf8ff",
-            "on-surface": "#131b2e",
-            "surface-dim": "#d2d9f4",
-            "secondary": "#6b38d4",
-            "tertiary": "#006c49",
-            "on-surface-variant": "#464554",
-            "primary-fixed-dim": "#c0c1ff",
-            "on-secondary": "#ffffff",
-            "on-secondary-fixed-variant": "#5516be",
-            "error-container": "#ffdad6",
-            "on-secondary-container": "#fffbff",
-            "background": "#faf8ff",
-            "surface-tint": "#494bd6",
-            "on-secondary-fixed": "#23005c",
-            "surface-container": "#eaedff",
-            "tertiary-fixed": "#6ffbbe",
-            "primary-fixed": "#e1e0ff",
-            "on-primary": "#ffffff",
-            "on-primary-fixed": "#07006c",
-            "surface-container-highest": "#dae2fd",
-            "outline-variant": "#c7c4d7",
-            "secondary-fixed-dim": "#d0bcff",
-            "primary": "#4648d4",
-            "on-tertiary-fixed": "#002113",
-            "tertiary-container": "#00885d",
-            "inverse-primary": "#c0c1ff",
-            "surface-container-low": "#f2f3ff",
-            "on-primary-fixed-variant": "#2f2ebe",
-            "surface-variant": "#dae2fd",
-            "outline": "#767586",
-            "secondary-fixed": "#e9ddff",
-            "on-error": "#ffffff",
-            "surface-container-high": "#e2e7ff",
-            "surface-bright": "#faf8ff",
-            "inverse-surface": "#283044"
-          },
-          "borderRadius": {
-            "DEFAULT": "1rem",
-            "lg": "2rem",
-            "xl": "3rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-xs": "0.25rem",
-            "gutter": "1.5rem",
-            "margin": "2rem",
-            "space-sm": "0.5rem",
-            "margin-mobile": "1rem",
-            "space-lg": "1.5rem",
-            "space-xl": "2.5rem",
-            "space-md": "1rem",
-            "gutter-mobile": "1rem"
-          },
-          "fontFamily": {
-            "headline-lg": ["Plus Jakarta Sans"],
-            "headline-md": ["Plus Jakarta Sans"],
-            "label-md": ["Inter"],
-            "metric-display-mobile": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"],
-            "headline-lg-mobile": ["Plus Jakarta Sans"],
-            "metric-display": ["Plus Jakarta Sans"],
-            "label-sm": ["Inter"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "headline-sm": ["Plus Jakarta Sans"],
-            "display-mobile": ["Plus Jakarta Sans"],
-            "label-lg": ["Inter"],
-            "display": ["Plus Jakarta Sans"],
-            "body-lg": ["Plus Jakarta Sans"]
-          },
-          "fontSize": {
-            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
-            "metric-display-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-            "metric-display": ["44px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
-            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
-            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
-            "display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
-            "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
-          }
-        },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      display: inline-block;
-      vertical-align: middle;
-      line-height: 1;
-    }
-    input[type=range]::-webkit-slider-thumb {
-      appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 9999px;
-      background: #4648d4;
-      cursor: pointer;
-      box-shadow: 0 0 0 4px #e1e0ff;
-      transition: transform 0.1s ease;
-    }
-    input[type=range]::-webkit-slider-thumb:hover {
-      transform: scale(1.1);
-    }
-
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
-  </style>
+<script src="/theme.js"></script>
 </head>
 <body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-primary">
 <!-- TopNavBar (Shared Component implementation) -->
@@ -178,11 +36,14 @@
 <span class="tracking-tight">AudioSpeed</span>
 </a>
 <!-- Navigation Links (Active state: Calculator) -->
-<nav class="hidden md:flex items-center gap-8 text-label-lg font-label-lg">
+<nav class="hidden lg:flex items-center gap-5 text-label-lg font-label-lg">
 <a class="text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#calculator">Calculator</a>
 <a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="#presets">Presets</a>
 <a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="#how-it-works">How It Works</a>
 <a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="#faq">FAQ</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="/privacy">Privacy</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="/about">About</a>
+<a class="text-on-surface-variant dark:text-inverse-on-surface hover:text-on-surface transition-colors pb-1" href="/contact">Contact</a>
 </nav>
 <!-- Trailing Action -->
 <div class="flex items-center gap-3">
@@ -195,7 +56,23 @@
         </a>
 </div>
 </div>
+<nav aria-label="Site" class="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-1 px-4 py-2 border-t border-outline-variant/20 text-label-md font-label-md">
+<a class="text-primary font-semibold" href="#calculator">Calculator</a>
+<a class="text-on-surface-variant hover:text-primary" href="#faq">FAQ</a>
+<a class="text-on-surface-variant hover:text-primary" href="/privacy">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary" href="/about">About</a>
+<a class="text-on-surface-variant hover:text-primary" href="/contact">Contact</a>
+</nav>
 </header>
+<div class="border-b border-outline-variant/30 bg-surface-container-lowest" hidden="" id="analytics-banner">
+<div class="max-w-3xl mx-auto px-4 py-3">
+<p class="text-body-sm font-body-sm text-on-surface">Google Analytics (G-X0RVS4D5VV) stays off until you accept. Decline keeps that tag off in this browser. Fonts, the style CDN, and Vercel hosting still load. <a class="text-primary font-semibold underline" href="/privacy">Privacy details</a></p>
+<div class="mt-3 flex flex-wrap gap-2">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-lg font-label-lg" data-analytics-choice="accepted" type="button">Accept analytics</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full text-label-lg font-label-lg" data-analytics-choice="declined" type="button">Decline analytics</button>
+</div>
+</div>
+</div>
 <!-- Main Content Canvas -->
 <main class="flex-grow">
 <!-- Hero Section -->
@@ -225,10 +102,10 @@
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <!-- Hours Field -->
-<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 flex items-center justify-between focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 flex items-center justify-between focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all" id="hours-field">
 <div class="flex flex-col">
-<span class="text-label-sm font-label-sm text-on-surface-variant">HOURS</span>
-<input class="w-24 bg-transparent text-headline-md font-headline-md text-on-surface font-bold border-none p-0 focus:ring-0" id="input-hours" max="200" min="0" type="number" value="12"/>
+<label class="text-label-sm font-label-sm text-on-surface-variant" for="input-hours">HOURS</label>
+<input aria-describedby="duration-hint input-error" class="w-24 bg-transparent text-headline-md font-headline-md text-on-surface font-bold border-none p-0 focus:ring-0" id="input-hours" inputmode="numeric" max="200" min="0" step="1" type="number" value="12"/>
 </div>
 <div class="flex items-center gap-1">
 <button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-xs active:scale-95 transition-all" onclick="adjustValue('input-hours', -1)" type="button">
@@ -240,10 +117,10 @@
 </div>
 </div>
 <!-- Minutes Field -->
-<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 flex items-center justify-between focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="bg-surface-container-low rounded-lg p-3 border border-outline-variant/30 flex items-center justify-between focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all" id="minutes-field">
 <div class="flex flex-col">
-<span class="text-label-sm font-label-sm text-on-surface-variant">MINUTES</span>
-<input class="w-24 bg-transparent text-headline-md font-headline-md text-on-surface font-bold border-none p-0 focus:ring-0" id="input-minutes" max="59" min="0" type="number" value="30"/>
+<label class="text-label-sm font-label-sm text-on-surface-variant" for="input-minutes">MINUTES</label>
+<input aria-describedby="duration-hint input-error" class="w-24 bg-transparent text-headline-md font-headline-md text-on-surface font-bold border-none p-0 focus:ring-0" id="input-minutes" inputmode="numeric" max="59" min="0" step="1" type="number" value="30"/>
 </div>
 <div class="flex items-center gap-1">
 <button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container shadow-xs active:scale-95 transition-all" onclick="adjustValue('input-minutes', -5)" type="button">
@@ -255,6 +132,8 @@
 </div>
 </div>
 </div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-3" id="duration-hint">Whole numbers only: hours 0–200 and minutes 0–59. A value such as 1.5 hours or 30.5 minutes is rejected instead of being shortened.</p>
+<p class="mt-2 text-body-sm font-body-sm text-error font-medium" hidden="" id="input-error" role="alert"></p>
 <!-- Quick Duration Presets -->
 <div class="flex flex-wrap items-center gap-2 mt-3">
 <span class="text-label-sm font-label-sm text-on-surface-variant mr-1">Popular lengths:</span>
@@ -296,7 +175,7 @@
 </div>
 </div>
 <!-- Prominent Results Display Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6" data-state="valid" id="results">
 <!-- Card 1: New Listening Time -->
 <div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/30 flex flex-col justify-between">
 <div>
@@ -325,16 +204,16 @@
 <span class="text-label-md font-label-md text-on-surface-variant font-semibold">TIME SAVED</span>
 <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1">
 <span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
-<span id="pct-saved-badge">33% faster</span>
+<span id="pct-saved-badge" title="Listening time is 33% shorter than the original. Playback at 1.50x is 50% faster than 1.00x.">33% less time</span>
 </span>
 </div>
 <div class="text-metric-display font-metric-display text-tertiary my-2" id="time-saved-display">
                 4h 10m
               </div>
 </div>
-<div class="pt-3 border-t border-outline-variant/20 flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
-<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="check_circle">check_circle</span>
-<span>Finish in <span class="font-semibold text-on-surface" id="days-equivalent">1-2 days</span> at standard reading pace</span>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center gap-2 text-label-md font-label-md text-on-surface-variant" id="days-line">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="event">event</span>
+<span><span class="font-semibold text-on-surface" id="days-equivalent">About 4.2 days</span> if you listen 2 hours a day</span>
 </div>
 </div>
 </div>
@@ -355,7 +234,7 @@
 </div>
 <div class="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/20">
 <div class="text-label-sm font-label-sm text-on-surface-variant">At 1.75x</div>
-<div class="text-body-md font-body-md font-bold text-on-surface mt-0.5" id="comp-175">7h 08m</div>
+<div class="text-body-md font-body-md font-bold text-on-surface mt-0.5" id="comp-175">7h 09m</div>
 </div>
 <div class="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/20">
 <div class="text-label-sm font-label-sm text-on-surface-variant">At 2.00x</div>
@@ -367,9 +246,9 @@
 </section>
 <!-- How It Works Section (3 steps) -->
 <section class="py-16 px-6 max-w-7xl mx-auto" id="how-it-works">
-<div class="text-center max-w-2xl mx-auto mb-12">
+<div class="text-center max-w-3xl mx-auto mb-12">
 <h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">How It Works</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Three simple steps to calculate your saved listening time and accelerate your reading checklist.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Listening time is the original length divided by playback speed. Time saved is the original length minus that result. A 10-hour book at 1.5x takes 6h 40m and saves 3h 20m, which is about 33% less listening time. Playback at 1.5x is 50% faster than 1.0x. Displayed times are rounded to the nearest minute.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 <!-- Step 1 -->
@@ -415,7 +294,7 @@
 <div class="text-label-sm font-label-sm text-primary font-bold mb-1">STEP 3</div>
 <h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">See Your Savings</h3>
 <p class="text-body-sm font-body-sm text-on-surface-variant">
-              Instantly see the exact listening time and total hours saved to plan your reading goals with confidence.
+              See the new listening time and the hours saved, rounded to the nearest minute.
             </p>
 </div>
 <div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
@@ -442,7 +321,7 @@
 <tr class="border-b border-outline-variant/40">
 <th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">Original Length</th>
 <th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">1.25x Speed</th>
-<th class="py-3 px-4 text-label-md font-label-md text-primary font-bold">1.50x Speed (Optimal)</th>
+<th class="py-3 px-4 text-label-md font-label-md text-primary font-bold">1.50x Speed</th>
 <th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">1.75x Speed</th>
 <th class="py-3 px-4 text-label-md font-label-md text-on-surface-variant">2.00x Speed</th>
 </tr>
@@ -466,26 +345,27 @@
 <td class="py-3.5 px-4 font-bold text-on-surface">20 Hours <span class="text-label-sm font-label-sm text-on-surface-variant font-normal">(Long Non-Fiction)</span></td>
 <td class="py-3.5 px-4 text-on-surface">16h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 4h 00m</span></td>
 <td class="py-3.5 px-4 font-semibold text-primary bg-primary-fixed/30 rounded">13h 20m <span class="text-tertiary text-label-sm font-label-sm block">Save 6h 40m</span></td>
-<td class="py-3.5 px-4 text-on-surface">11h 25m <span class="text-tertiary text-label-sm font-label-sm block">Save 8h 35m</span></td>
+<td class="py-3.5 px-4 text-on-surface">11h 26m <span class="text-tertiary text-label-sm font-label-sm block">Save 8h 34m</span></td>
 <td class="py-3.5 px-4 text-on-surface">10h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 10h 00m</span></td>
 </tr>
 <tr class="hover:bg-surface-container-lowest/50 transition-colors">
 <td class="py-3.5 px-4 font-bold text-on-surface">30 Hours <span class="text-label-sm font-label-sm text-on-surface-variant font-normal">(Epic Fantasy / Bio)</span></td>
 <td class="py-3.5 px-4 text-on-surface">24h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 6h 00m</span></td>
 <td class="py-3.5 px-4 font-semibold text-primary bg-primary-fixed/30 rounded">20h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 10h 00m</span></td>
-<td class="py-3.5 px-4 text-on-surface">17h 08m <span class="text-tertiary text-label-sm font-label-sm block">Save 12h 52m</span></td>
+<td class="py-3.5 px-4 text-on-surface">17h 09m <span class="text-tertiary text-label-sm font-label-sm block">Save 12h 51m</span></td>
 <td class="py-3.5 px-4 text-on-surface">15h 00m <span class="text-tertiary text-label-sm font-label-sm block">Save 15h 00m</span></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-4">The 1.50x column is a common preset, not a recommended speed. These rows use the same nearest-minute rounding as the calculator.</p>
 </div>
 </section>
 <!-- FAQ Accordion Section -->
 <section class="py-16 px-6 max-w-4xl mx-auto" id="faq">
 <div class="text-center mb-10">
 <h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Frequently Asked Questions</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Everything you need to know about listening faster without losing comprehension.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Short answers about playback speed, this calculator, and common audiobook apps.</p>
 </div>
 <div class="space-y-4">
 <!-- FAQ 1 -->
@@ -501,11 +381,11 @@
 <!-- FAQ 2 -->
 <details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 open:shadow-xs transition-all">
 <summary class="flex justify-between items-center cursor-pointer list-none text-headline-sm font-headline-sm text-on-surface font-semibold">
-<span>What is the ideal listening speed for comprehension and retention?</span>
+<span>How do I pick a speed I can follow?</span>
 <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
 </summary>
 <div class="mt-3 text-body-md font-body-md text-on-surface-variant pt-2 border-t border-outline-variant/20">
-            Cognitive studies show that speeds between 1.25x and 1.5x provide virtually identical recall rates compared to 1.0x for conversational English narration. Above 1.75x, comprehension slightly drops unless you build up tolerance gradually over several chapters.
+            It depends on the narrator, the book, and how you listen. This page only estimates time. It does not measure comprehension, and a faster speed does not guarantee that you will retain the book. Try one chapter at a speed you can follow, then move up or down. If a passage is unclear, slow that part down.
           </div>
 </details>
 <!-- FAQ 3 -->
@@ -554,107 +434,144 @@
         </span>
 </div>
 <!-- Links -->
-<div class="flex flex-wrap justify-center items-center gap-6 text-label-md font-label-md">
+<div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-label-md font-label-md">
 <a class="text-primary dark:text-primary-fixed font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#calculator">Calculator</a>
 <a class="text-on-surface-variant dark:text-inverse-on-surface/80 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#speed-charts">Speed Charts</a>
 <a class="text-on-surface-variant dark:text-inverse-on-surface/80 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#how-it-works">How It Works</a>
 <a class="text-on-surface-variant dark:text-inverse-on-surface/80 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#faq">FAQ</a>
+<a class="text-on-surface font-semibold hover:text-primary transition-colors duration-150" href="/privacy">Privacy</a>
+<a class="text-on-surface font-semibold hover:text-primary transition-colors duration-150" href="/about">About</a>
+<a class="text-on-surface font-semibold hover:text-primary transition-colors duration-150" href="/contact">Contact</a>
 </div>
 </div>
 </footer>
-<!-- Vanilla JS Engine for Live Calculation -->
+<script src="/calculator.js"></script>
 <script>
-    let currentSpeed = 1.50;
+    let currentSpeed = 1.5;
+    const activePillClass = "speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-primary-fixed border border-primary text-primary font-bold transition-all shadow-xs";
+    const idlePillClass = "speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all";
 
-    function formatTime(totalMinutes) {
-      const hrs = Math.floor(totalMinutes / 60);
-      const mins = Math.round(totalMinutes % 60);
-      return `${hrs}h ${mins.toString().padStart(2, '0')}m`;
+    function setMetric(id, value, empty) {
+      const el = document.getElementById(id);
+      el.textContent = value;
+      el.classList.toggle('metric-empty', empty);
+    }
+
+    function setFieldState(field, invalid) {
+      const element = document.getElementById(field + '-field');
+      if (!element) return;
+      element.classList.toggle('field-invalid', invalid);
+      const input = document.getElementById(field === 'hours' ? 'input-hours' : 'input-minutes');
+      if (!input) return;
+      if (invalid) input.setAttribute('aria-invalid', 'true');
+      else input.removeAttribute('aria-invalid');
+    }
+
+    function clearResults() {
+      document.getElementById('results').dataset.state = 'invalid';
+      setMetric('new-duration-display', 'No result', true);
+      setMetric('time-saved-display', 'No result', true);
+      document.getElementById('pct-saved-badge').textContent = '—';
+      document.getElementById('pct-saved-badge').removeAttribute('title');
+      document.getElementById('speed-ratio-pct').textContent = '—';
+      document.getElementById('progress-bar-fill').style.width = '0%';
+      document.getElementById('comp-125').textContent = '—';
+      document.getElementById('comp-150').textContent = '—';
+      document.getElementById('comp-175').textContent = '—';
+      document.getElementById('comp-200').textContent = '—';
+      document.getElementById('days-equivalent').textContent = '—';
+      document.getElementById('days-line').hidden = true;
+    }
+
+    function showError(parsed) {
+      const error = document.getElementById('input-error');
+      error.hidden = false;
+      error.textContent = parsed.message;
+      setFieldState('hours', parsed.field === 'hours' || parsed.field === 'both');
+      setFieldState('minutes', parsed.field === 'minutes' || parsed.field === 'both');
+      clearResults();
+    }
+
+    function renderResult(result) {
+      const error = document.getElementById('input-error');
+      error.hidden = true;
+      error.textContent = '';
+      setFieldState('hours', false);
+      setFieldState('minutes', false);
+      document.getElementById('results').dataset.state = 'valid';
+      setMetric('new-duration-display', result.newLabel, false);
+      setMetric('time-saved-display', result.savedLabel, false);
+      const badge = document.getElementById('pct-saved-badge');
+      badge.textContent = result.lessTimeLabel;
+      badge.title = result.note;
+      document.getElementById('speed-ratio-pct').textContent = result.ratioPct + '% of original';
+      document.getElementById('progress-bar-fill').style.width = Math.min(100, result.ratioPct) + '%';
+      document.getElementById('speed-display-badge').textContent = currentSpeed.toFixed(2) + 'x';
+      document.getElementById('comp-125').textContent = result.comparisons['1.25'];
+      document.getElementById('comp-150').textContent = result.comparisons['1.50'];
+      document.getElementById('comp-175').textContent = result.comparisons['1.75'];
+      document.getElementById('comp-200').textContent = result.comparisons['2.00'];
+      document.getElementById('days-equivalent').textContent = result.daysLabel;
+      document.getElementById('days-line').hidden = false;
     }
 
     function calculate() {
-      const hours = parseInt(document.getElementById('input-hours').value) || 0;
-      const minutes = parseInt(document.getElementById('input-minutes').value) || 0;
-      const originalTotalMins = (hours * 60) + minutes;
-
-      if (originalTotalMins <= 0) return;
-
-      // Calculate new time
-      const newTotalMins = originalTotalMins / currentSpeed;
-      const savedMins = originalTotalMins - newTotalMins;
-      const pctSaved = Math.round(((originalTotalMins - newTotalMins) / originalTotalMins) * 100);
-      const ratioPct = Math.round((newTotalMins / originalTotalMins) * 100);
-
-      // Update DOM
-      document.getElementById('new-duration-display').innerText = formatTime(newTotalMins);
-      document.getElementById('time-saved-display').innerText = formatTime(savedMins);
-      document.getElementById('pct-saved-badge').innerText = `${pctSaved}% faster`;
-      document.getElementById('speed-ratio-pct').innerText = `${ratioPct}% of original`;
-      document.getElementById('progress-bar-fill').style.width = `${Math.min(100, ratioPct)}%`;
-      document.getElementById('speed-display-badge').innerText = `${currentSpeed.toFixed(2)}x`;
-
-      // Update comparison chips
-      document.getElementById('comp-125').innerText = formatTime(originalTotalMins / 1.25);
-      document.getElementById('comp-150').innerText = formatTime(originalTotalMins / 1.50);
-      document.getElementById('comp-175').innerText = formatTime(originalTotalMins / 1.75);
-      document.getElementById('comp-200').innerText = formatTime(originalTotalMins / 2.00);
-
-      // Estimate days
-      const hoursNew = newTotalMins / 60;
-      if (hoursNew <= 5) {
-        document.getElementById('days-equivalent').innerText = '1 day';
-      } else if (hoursNew <= 12) {
-        document.getElementById('days-equivalent').innerText = '2-3 days';
-      } else if (hoursNew <= 25) {
-        document.getElementById('days-equivalent').innerText = '4-6 days';
-      } else {
-        document.getElementById('days-equivalent').innerText = '1-2 weeks';
+      const parsed = AudioCalc.parseDuration(
+        document.getElementById('input-hours').value,
+        document.getElementById('input-minutes').value
+      );
+      if (!parsed.ok) {
+        showError(parsed);
+        return;
       }
+      const result = AudioCalc.calculateResult(parsed.totalMinutes, currentSpeed);
+      if (!result.ok) {
+        showError(result);
+        return;
+      }
+      renderResult(result);
     }
 
     function setSpeed(val) {
-      currentSpeed = parseFloat(val);
-      document.getElementById('speed-slider').value = currentSpeed;
-      
-      // Update chip styles
-      document.querySelectorAll('.speed-pill').forEach(btn => {
+      const speed = AudioCalc.normalizeSpeed(val);
+      if (speed === null) return;
+      currentSpeed = speed;
+      document.getElementById('speed-slider').value = String(currentSpeed);
+      document.querySelectorAll('.speed-pill').forEach((btn) => {
         const btnSpeed = parseFloat(btn.getAttribute('data-speed'));
-        if (Math.abs(btnSpeed - currentSpeed) < 0.01) {
-          btn.className = "speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-primary-fixed border border-primary text-primary font-bold transition-all shadow-xs";
-        } else {
-          btn.className = "speed-pill py-2 px-3 rounded-full text-center text-label-lg font-label-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-all";
-        }
+        btn.className = Math.abs(btnSpeed - currentSpeed) < 0.01 ? activePillClass : idlePillClass;
       });
       calculate();
     }
 
-    function setDuration(h, m) {
-      document.getElementById('input-hours').value = h;
-      document.getElementById('input-minutes').value = m;
+    function setDuration(hours, minutes) {
+      document.getElementById('input-hours').value = String(hours);
+      document.getElementById('input-minutes').value = String(minutes);
       calculate();
     }
 
     function adjustValue(id, delta) {
-      const input = document.getElementById(id);
-      let val = parseInt(input.value) || 0;
-      val = Math.max(0, val + delta);
-      if (id === 'input-minutes' && val >= 60) {
-        const hoursInput = document.getElementById('input-hours');
-        hoursInput.value = (parseInt(hoursInput.value) || 0) + Math.floor(val / 60);
-        val = val % 60;
+      const field = id === 'input-hours' ? 'hours' : 'minutes';
+      const adjusted = AudioCalc.adjustDuration(
+        document.getElementById('input-hours').value,
+        document.getElementById('input-minutes').value,
+        field,
+        delta
+      );
+      if (adjusted.ok) {
+        document.getElementById('input-hours').value = String(adjusted.hours);
+        document.getElementById('input-minutes').value = String(adjusted.minutes);
       }
-      input.value = val;
       calculate();
     }
 
-    // Event listeners
     document.getElementById('input-hours').addEventListener('input', calculate);
     document.getElementById('input-minutes').addEventListener('input', calculate);
-    document.getElementById('speed-slider').addEventListener('input', (e) => {
-      setSpeed(e.target.value);
+    document.getElementById('speed-slider').addEventListener('input', (event) => {
+      setSpeed(event.target.value);
     });
 
-    // Initial calculation run
     calculate();
   </script>
+<script src="/analytics-choice.js"></script>
 </body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy — Audiobook Speed Calculator</title>
+<meta name="description" content="Privacy notice for the free audiobook speed calculator: Google Analytics 4, cookies, Vercel hosting, and Google Fonts."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://audiobookspeedcalculator.net/privacy"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="/site.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="/theme.js"></script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16 w-full">
+<a class="flex items-center gap-2.5 text-headline-sm font-headline-sm font-bold text-primary" href="/">
+<span class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">headphones</span>
+</span>
+<span class="tracking-tight">AudioSpeed</span>
+</a>
+<nav class="hidden lg:flex items-center gap-5 text-label-lg font-label-lg">
+<a class="text-on-surface-variant hover:text-on-surface" href="/#calculator">Calculator</a>
+<a class="text-on-surface-variant hover:text-on-surface" href="/#how-it-works">How It Works</a>
+<a class="text-on-surface-variant hover:text-on-surface" href="/#faq">FAQ</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="/privacy">Privacy</a>
+<a class="text-on-surface-variant hover:text-on-surface" href="/about">About</a>
+<a class="text-on-surface-variant hover:text-on-surface" href="/contact">Contact</a>
+</nav>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-lg font-label-lg" href="/#calculator">Calculate Now</a>
+</div>
+<nav aria-label="Site" class="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-1 px-4 py-2 border-t border-outline-variant/20 text-label-md font-label-md">
+<a class="text-on-surface-variant" href="/#calculator">Calculator</a>
+<a class="text-primary font-semibold" href="/privacy">Privacy</a>
+<a class="text-on-surface-variant" href="/about">About</a>
+<a class="text-on-surface-variant" href="/contact">Contact</a>
+</nav>
+</header>
+<div class="border-b border-outline-variant/30 bg-surface-container-lowest" hidden="" id="analytics-banner">
+<div class="max-w-3xl mx-auto px-4 py-3">
+<p class="text-body-sm font-body-sm text-on-surface">Google Analytics (G-X0RVS4D5VV) stays off until you accept. Decline keeps that tag off in this browser. Fonts, the style CDN, and Vercel hosting still load. The choices below do the same thing.</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-lg font-label-lg" data-analytics-choice="accepted" type="button">Accept analytics</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full text-label-lg font-label-lg" data-analytics-choice="declined" type="button">Decline analytics</button>
+</div>
+</div>
+</div>
+<main class="flex-grow px-6 py-12">
+<article class="max-w-3xl mx-auto space-y-6">
+<p class="text-label-sm font-label-sm text-primary font-semibold">Last updated 2026-11-09</p>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Privacy</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">AudioSpeed is a free static calculator. The listening-time math runs in your browser. The hours, minutes, and playback speed you type are not sent to a server by this site's own script. This page describes the other services the pages do use. It is a plain-language notice about those services. It is not a legal certification, and it does not claim GDPR, CCPA, or any other compliance program.</p>
+<section class="space-y-3">
+<h2 class="text-headline-sm font-headline-sm">Google Analytics 4</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">If you choose Accept, the site loads Google Analytics 4 with measurement ID <strong class="text-on-surface">G-X0RVS4D5VV</strong> from googletagmanager.com. Google may set cookies, including cookies whose names start with <code>_ga</code>, and may receive information such as the page you open, general browser and device data, and an approximate location derived from your IP address. Google explains Analytics collection in its <a class="text-primary underline" href="https://support.google.com/analytics/answer/7318509?hl=en">Analytics privacy disclosures</a> and in the <a class="text-primary underline" href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">If you choose Decline, this site does not add that tag. The choice is saved in this browser under the localStorage key <code>audiobook-analytics-choice</code>. Clearing site data for this site removes the saved choice. Declining does not delete information Google may already have from an earlier accepted visit, and it does not stop the hosting, font, or stylesheet requests below.</p>
+<p class="text-body-sm font-body-sm text-on-surface" id="analytics-choice-status">No analytics choice is saved in this browser yet.</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant" id="analytics-save-note"></p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-lg font-label-lg" data-analytics-choice="accepted" type="button">Accept analytics</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-full text-label-lg font-label-lg" data-analytics-choice="declined" type="button">Decline analytics</button>
+</div>
+</section>
+<section class="space-y-3">
+<h2 class="text-headline-sm font-headline-sm">Cookies and browser storage</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">The calculator does not need an account cookie. The analytics choice uses localStorage, which stays in this browser but is not itself a cookie. Google Analytics may set cookies only after you accept. Vercel, Google Fonts, or the Tailwind CDN may keep their own logs or cookies. This site does not control those systems, and this on/off choice is not a full consent-management platform.</p>
+</section>
+<section class="space-y-3">
+<h2 class="text-headline-sm font-headline-sm">Hosting</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">The site is hosted by Vercel. When your browser requests a page, Vercel receives ordinary connection data such as IP address, user agent, and the requested URL, and it may keep server logs. See the <a class="text-primary underline" href="https://vercel.com/legal/privacy-policy">Vercel privacy policy</a>.</p>
+</section>
+<section class="space-y-3">
+<h2 class="text-headline-sm font-headline-sm">Fonts and styles</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Pages load Plus Jakarta Sans, Inter, and Material Symbols from Google Fonts (<code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code>). Your browser contacts Google to fetch those font files. Pages also load the Tailwind CSS browser build from <code>https://cdn.tailwindcss.com</code> so the layout can be styled. That request can expose your IP address to the CDN. These requests are not gated by the analytics choice, because the page uses them to render.</p>
+</section>
+<section class="space-y-3">
+<h2 class="text-headline-sm font-headline-sm">What this site does not do</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">The calculator does not ask you to upload audio or create an account. This site does not show ads and does not use Google AdSense. Nothing on this page promises that no data is processed. The length and speed you enter stay in the page script unless some other script on your own browser sends them elsewhere.</p>
+</section>
+<section class="space-y-3">
+<h2 class="text-headline-sm font-headline-sm">Questions</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">There is no published email address for this site. For a question about this notice, open a public issue on <a class="text-primary underline" href="https://github.com/kobe3edc/audiobook-speed-calculator/issues">GitHub Issues</a>. Do not include private personal information there. See <a class="text-primary underline" href="/contact">Contact</a>.</p>
+</section>
+</article>
+</main>
+<footer class="bg-surface-container-low border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-body-sm font-body-sm text-on-surface-variant">© 2026 AudioSpeed Calculator. Free listening-time estimate. No account.</p>
+<nav class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-primary" href="/#calculator">Calculator</a>
+<a class="text-on-surface font-semibold" href="/privacy">Privacy</a>
+<a class="text-on-surface font-semibold" href="/about">About</a>
+<a class="text-on-surface font-semibold" href="/contact">Contact</a>
+</nav>
+</div>
+</footer>
+<script src="/analytics-choice.js"></script>
+</body>
+</html>
