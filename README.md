@@ -30,12 +30,13 @@ Listening time = original length ÷ speed. Time saved = original length − list
 | `sitemap.xml` | Sitemap for Search Console |
 | `favicon.svg` | Site icon |
 | `vercel.json` | Clean URLs so `/privacy` serves `privacy.html` |
+| `docs/before-adsense.md` | Operator checklist before any ad code. Not a public page and not in the sitemap. |
 
 ## Stack
 
 Static HTML/CSS/JS on [Vercel](https://vercel.com/). Canonical host: `https://audiobookspeedcalculator.net/`.
 
-Google Analytics measurement ID `G-X0RVS4D5VV` loads only after the visitor accepts it in this browser. Fonts still come from Google Fonts, and styles still use the Tailwind CDN.
+Google Analytics measurement ID `G-X0RVS4D5VV` loads only after the visitor accepts it in this browser. Fonts still come from Google Fonts, and styles still use the Tailwind CDN. The site does not show ads. Read `docs/before-adsense.md` before adding any.
 
 ## Local preview
 

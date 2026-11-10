@@ -152,7 +152,7 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.match(index, /if you listen 2 hours a day/);
   assert.match(index, /6h 40m and saves 3h 20m/);
 
-  assert.match(privacy, /Last updated 2026-11-09/);
+  assert.match(privacy, /Last updated 2026-11-10/);
   assert.match(privacy, /G-X0RVS4D5VV/);
   assert.match(privacy, /Vercel/);
   assert.match(privacy, /fonts\.googleapis\.com/);
@@ -162,6 +162,16 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.equal(/never collect/i.test(privacy), false);
   assert.equal(/AdSense/i.test(privacy), true);
   assert.match(privacy, /does not use Google AdSense/);
+  assert.match(privacy, /does not show ads/);
+  assert.match(privacy, /no ads\.txt file/);
+  assert.match(privacy, /https:\/\/adssettings\.google\.com\//);
+  assert.match(privacy, /https:\/\/www\.aboutads\.info\/choices/);
+  assert.match(privacy, /only if Google ads are actually added later/);
+  assert.match(privacy, /does not claim the step is finished/);
+  assert.match(privacy, /before those personalized ads are served/);
+  assert.equal(privacy.includes('ca-pub'), false);
+  assert.equal(privacy.includes('adsbygoogle'), false);
+  assert.equal(fs.existsSync(path.join(root, 'ads.txt')), false);
   assert.equal(privacy.includes('mailto:'), false);
 
   assert.match(about, /independent, free audiobook speed calculator/);
