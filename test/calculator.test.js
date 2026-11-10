@@ -163,8 +163,7 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.equal(/AdSense/i.test(privacy), true);
   assert.match(privacy, /does not show ads/);
   assert.match(privacy, /site verification and application/);
-  assert.match(privacy, /Review has not been submitted/);
-  assert.match(privacy, /is not approved/);
+  assert.match(privacy, /Submitting verification or an application does not mean the site is approved or that ads are being served/);
   assert.equal(privacy.includes('does not use Google AdSense'), false);
   assert.equal(privacy.includes('not connected to AdSense'), false);
   assert.match(privacy, /https:\/\/adssettings\.google\.com\//);
