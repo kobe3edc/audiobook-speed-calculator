@@ -161,9 +161,11 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.equal(/GDPR compliant/i.test(privacy), false);
   assert.equal(/never collect/i.test(privacy), false);
   assert.equal(/AdSense/i.test(privacy), true);
-  assert.match(privacy, /does not use Google AdSense/);
   assert.match(privacy, /does not show ads/);
-  assert.match(privacy, /no ads\.txt file/);
+  assert.match(privacy, /site verification and application/);
+  assert.match(privacy, /Submitting verification or an application does not mean the site is approved or that ads are being served/);
+  assert.equal(privacy.includes('does not use Google AdSense'), false);
+  assert.equal(privacy.includes('not connected to AdSense'), false);
   assert.match(privacy, /https:\/\/adssettings\.google\.com\//);
   assert.match(privacy, /https:\/\/www\.aboutads\.info\/choices/);
   assert.match(privacy, /only if Google ads are actually added later/);
@@ -171,7 +173,9 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.match(privacy, /before those personalized ads are served/);
   assert.equal(privacy.includes('ca-pub'), false);
   assert.equal(privacy.includes('adsbygoogle'), false);
-  assert.equal(fs.existsSync(path.join(root, 'ads.txt')), false);
+  assert.equal(index.includes('adsbygoogle'), false);
+  assert.match(index, /<meta name="google-adsense-account" content="ca-pub-6030194077540135"\/>/);
+  assert.equal(fs.readFileSync(path.join(root, 'ads.txt'), 'utf8'), 'google.com, pub-6030194077540135, DIRECT, f08c47fec0942fa0\n');
   assert.equal(privacy.includes('mailto:'), false);
 
   assert.match(about, /independent, free audiobook speed calculator/);
@@ -194,8 +198,11 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   const readme = read('README.md');
   assert.match(prep, /认证 CMP 不只有 Google 自家一种/);
   assert.match(prep, /不是唯一合法选项/);
-  assert.match(prep, /安装其中一项用来验证，不等于本站已经开始展示广告/);
-  assert.match(prep, /本站尚未接入/);
+  assert.match(prep, /安装验证不等于开始展示广告/);
+  assert.match(prep, /站点验证/);
+  assert.match(prep, /审核尚未提交/);
+  assert.match(prep, /没有安装 `adsbygoogle\.js`/);
+  assert.equal(prep.includes('本站尚未接入'), false);
   assert.equal(prep.includes('没有 AdSense 账户'), false);
   assert.match(prep, /不保证该 URL 无法访问/);
   assert.match(readme, /not in the site navigation or sitemap/);
