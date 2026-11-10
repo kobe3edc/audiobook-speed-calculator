@@ -190,6 +190,16 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.match(sitemap, /https:\/\/audiobookspeedcalculator\.net\/privacy/);
   assert.match(sitemap, /https:\/\/audiobookspeedcalculator\.net\/about/);
   assert.match(sitemap, /https:\/\/audiobookspeedcalculator\.net\/contact/);
+  const prep = read('docs/before-adsense.md');
+  const readme = read('README.md');
+  assert.match(prep, /认证 CMP 不只有 Google 自家一种/);
+  assert.match(prep, /不是唯一合法选项/);
+  assert.match(prep, /安装其中一项用来验证，不等于本站已经开始展示广告/);
+  assert.match(prep, /本站尚未接入/);
+  assert.equal(prep.includes('没有 AdSense 账户'), false);
+  assert.match(prep, /不保证该 URL 无法访问/);
+  assert.match(readme, /not in the site navigation or sitemap/);
+  assert.match(readme, /not a promise the URL is unreachable/);
   assert.equal(vercel.cleanUrls, true);
   assert.equal(analytics.includes('G-X0RVS4D5VV'), true);
   assert.equal(analytics.includes('G-'), true);
