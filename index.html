@@ -59,6 +59,7 @@
 </div>
 <nav aria-label="Site" class="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-1 px-4 py-2 border-t border-outline-variant/20 text-label-md font-label-md">
 <a class="text-primary font-semibold" href="#calculator">Calculator</a>
+<a class="text-on-surface-variant hover:text-primary" href="#how-it-works">How It Works</a>
 <a class="text-on-surface-variant hover:text-primary" href="#faq">FAQ</a>
 <a class="text-on-surface-variant hover:text-primary" href="/privacy">Privacy</a>
 <a class="text-on-surface-variant hover:text-primary" href="/about">About</a>
@@ -266,7 +267,7 @@
 </div>
 <div class="mt-6 pt-4 border-t border-outline-variant/20 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="check">check</span>
-            Compatible with all formats
+            Uses the length you type, not an audio file
           </div>
 </div>
 <!-- Step 2 -->
@@ -302,6 +303,18 @@
 <span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="check">check</span>
             Live real-time calculations
           </div>
+</div>
+</div>
+<div class="max-w-3xl mx-auto mt-12">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-3">Worked examples</h3>
+<div class="space-y-4 text-body-md font-body-md text-on-surface-variant">
+<p>The 10-hour example above comes out even. These show the rounding the labels actually use.</p>
+<ul class="list-disc list-inside space-y-3">
+<li><strong>Half minutes round up.</strong> 1 hour 59 minutes is 119 minutes. At 2.00x, 119 ÷ 2 = 59.5 minutes of listening time, and the time saved is also 59.5 minutes. Both round up, so the page shows 1h 00m and 1h 00m. Those labels add to 2h 00m, one minute more than the book. 60 minutes is shown as 1h 00m, not 0h 60m.</li>
+<li><strong>Percents round on their own.</strong> At 1.60x, 4 hours is 240 ÷ 1.60 = 150 minutes (2h 30m) and saves 1h 30m. The shares are 62.5% and 37.5%, so the page shows 63% of the original length and 38% less time. Those percents add to 101. 38% less time is the share removed, not the speed change: (1.60 - 1) × 100 = 60, so 1.60x is 60% faster than 1.00x.</li>
+<li><strong>At 1.00x and at 3.00x.</strong> At 1.00x, listening time matches the length you enter and the time saved is 0h 00m. 3 hours at 3.00x is 180 ÷ 3 = 60 minutes, so the page shows 1h 00m and saves 2h 00m. That is 67% less time, because 120 ÷ 180 rounds to 67%, and it is 200% faster than 1.00x, because (3.00 - 1) × 100 = 200.</li>
+</ul>
+<p>The day line divides the listening time before that minute rounding by 2 hours, then rounds to the nearest tenth of a day. It is not a finish date. 10 hours at 1.15x, which is not the 1.50x example above, is 600 ÷ 1.15 = 521.739… minutes. The clocks round to 8h 42m and 1h 18m, and those add back to 10h 00m. The day line uses 521.739… ÷ 120 = 4.347…, which rounds to about 4.3 days.</p>
 </div>
 </div>
 </section>
