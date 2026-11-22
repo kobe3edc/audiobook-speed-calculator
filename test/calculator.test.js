@@ -376,3 +376,48 @@ test('pages keep the canonical host, drop the old claims, and publish real notic
   assert.equal(analytics.includes('G-X0RVS4D5VV'), true);
   assert.equal(analytics.includes('G-'), true);
 });
+
+test('public speed claims match the sourced pages and the share label is not progress', () => {
+  const pages = ['index.html', 'about.html', 'privacy.html', 'contact.html'].map(read).join('\n');
+  const visible = pages.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+  assert.equal(visible.includes('Listening progress compression'), false);
+  assert.equal(visible.includes('chipmunk'), false);
+  assert.equal(visible.includes('pitch correction'), false);
+  assert.equal(visible.includes('0.05x or 0.1x'), false);
+  assert.equal(visible.includes('Variable stepping'), false);
+  assert.equal(visible.includes('OverDrive'), false);
+  assert.equal(visible.includes('Works for Audible'), false);
+  assert.equal(visible.includes('3.5x increments'), false);
+
+  assert.match(visible, /id="length-share-label">Whole book at this speed</);
+  assert.match(visible, /id="length-share-note">This is the full listening time divided by the original length, not how far you have already listened\./);
+  assert.match(visible, /id="length-share-meter" role="meter"/);
+  assert.match(visible, /aria-labelledby="length-share-label"/);
+  assert.match(visible, /aria-describedby="length-share-note"/);
+
+  assert.match(visible, /does not play audio and does not measure pitch/);
+  assert.match(visible, /does not claim that Audible, Spotify, Apple Books, Libby, or Storytel keep it the same/);
+
+  assert.match(visible, /href="https:\/\/www\.audible\.com\/ep\/NarrationSpeed"/);
+  assert.match(visible, /select a speed from 0\.5x to 3\.5x/);
+  assert.match(visible, /cloud player is 0\.5x to 3\.5x in 0\.1 steps/);
+  assert.match(visible, /does not give one step size for the iOS and Android apps/);
+  assert.match(visible, /not a numeric range/);
+
+  assert.match(visible, /href="https:\/\/help\.libbyapp\.com\/en-us\/6048\.htm"/);
+  assert.match(visible, /fine-tune slider from 0\.6x to 3x/);
+
+  assert.match(visible, /href="https:\/\/support\.apple\.com\/guide\/books\/listen-to-audiobooks-ibks9a460640\/mac"/);
+  assert.match(visible, /Apple Books on Mac/);
+  assert.match(visible, /slowest playback speed is 0\.75x and the fastest is 2x/);
+  assert.match(visible, /That guide is for Mac/);
+
+  assert.match(visible, /href="https:\/\/support\.spotify\.com\/us\/article\/audiobooks-unlock\/"/);
+  assert.match(visible, /does not list a minimum, maximum, or step size/);
+  assert.equal(/<strong>Spotify:<\/strong>[^<]*3\.5x/.test(visible), false);
+
+  assert.match(visible, /href="https:\/\/support\.storytel\.com\/hc\/en-001\/articles\/360010485739-Audiobook-Player"/);
+  assert.match(visible, /does not list the speeds or a step size/);
+  assert.match(visible, /This calculator's control is separate: 1\.00x to 3\.00x in steps of 0\.05/);
+});

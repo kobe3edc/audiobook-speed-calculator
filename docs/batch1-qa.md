@@ -13,9 +13,9 @@
 
 | ID | 实际处理 | 证据 |
 | --- | --- | --- |
-| B1-1 | 用手算核对时长、倍速、节省、百分比、天数和输入边界。只改了已证实的分钟减步缺陷。舍入规则未改。 | 下文用例表；`node --test test/calculator.test.js` 14 项通过 |
+| B1-1 | 用手算核对时长、倍速、节省、百分比、天数和输入边界。只改了已证实的分钟减步缺陷。舍入规则未改。 | 下文用例表；原先 14 项仍通过，2026-11-22 增至 15 项 |
 | B1-2 | 在现有 How It Works 增加三段可复核例子和天数说明。未新开 URL，未加对照表行，未改 FAQ 平台档位。 | `index.html` 的 `#how-it-works`；禁用 JS 后正文仍在 |
-| B1-3 | 未做。「Listening progress compression」原文保留。 | 首页该标签仍在 |
+| B1-3 | 已做。标签改为 “Whole book at this speed”，并说明这是全书收听时间占原时长的比例，不是已听进度。公式未改。 | `index.html` 的 `#length-share-label` 与 `#length-share-note`；仪表 `role="meter"` |
 | B1-4 | About 增加一段可从实现核实的说明：浏览器内计算、0.05 步进、分别舍入。没有新的个人身份、公司或团队。 | `about.html`；仍写「there is no team history to tell」 |
 | B1-5 | Contact 正文未改。仍只有公开 GitHub Issues，没有新邮箱。 | `contact.html` 与改动前相同；2026-11-21 GitHub API：`has_issues=true`，仓库公开，当时 open issues 为 0 |
 | B1-6 发布前 | 本地预览做了下面的检查。生产项全部未执行。 | 见「生产检查：未执行」 |
@@ -69,12 +69,19 @@
 - 1.00x 不改变时长；本页最快只算到 3.00x，`3h` @ 3.00x 为 `1h 00m` / `2h 00m`，67% less time，200% faster。
 - 天数用舍入前的分钟。`10h` @ 1.15x 的时钟加得回 10 小时，天数是约 4.3 天，不是完成日期。
 
-未把这些数字再写进 FAQ、对照表或 README 的例子，避免重复。Step 1 底部原来的 “Compatible with all formats” 与代码不符（页面不读取音频文件），改成 “Uses the length you type, not an audio file”。
+未把这些数字再写进对照表或 README。Step 1 底部原来的 “Compatible with all formats” 与代码不符（页面不读取音频文件），改成 “Uses the length you type, not an audio file”。首页描述里的 “Works for Audible, Spotify, Libby, and more” 也已去掉，避免写成和这些应用对接。
 
-现有 FAQ 里的平台与音高句子本批没有官方来源核验，也没有改写或加长。标为待核，不当作已证实：
+随后一次补丁改了 FAQ 的平台数字和音高句，只保留 2026-11-22 打开的官方页里写明的范围，并在句内给出来源。没有新页面。
 
-- “Does changing speed distort the narrator's pitch?” 下的绝对说法（现代应用都做音高修正）。
-- Audible `0.5x–3.5x`、Spotify `0.5x–3.5x`、Libby / OverDrive `0.6x–3.0x`、Apple Books 与 Storytel 的档位描述。
+| 公开说法 | 来源与范围 | 不写成 |
+| --- | --- | --- |
+| Audible 可选 0.5x 到 3.5x；Audible.com 云播放器是 0.5x 到 3.5x、步进 0.1；Alexa 是语音指令，没有数字范围 | https://www.audible.com/ep/NarrationSpeed | 所有端都是 0.05 或 0.1 步进；iOS/Android 的步进 |
+| Libby 预设或微调滑杆 0.6x 到 3x | https://help.libbyapp.com/en-us/6048.htm | OverDrive 单独档位 |
+| Mac 上的“图书”最慢 0.75x、最快 2x | https://support.apple.com/guide/books/listen-to-audiobooks-ibks9a460640/mac | iPhone、iPad 或其他设备 |
+| Spotify 手机正在播放、桌面和网页播放器有播放速度控制；该文没有最小、最大或步进 | https://support.spotify.com/us/article/audiobooks-unlock/ | 0.5x 到 3.5x |
+| Storytel 播放器里标着 1.0x 的控制用来选速度；该文没有列出速度或步进 | https://support.storytel.com/hc/en-001/articles/360010485739-Audiobook-Player | 可变拨盘或任何数字范围 |
+| 本页自己的控件是 1.00x 到 3.00x、步进 0.05 | `index.html` 滑杆 | 把它说成上述应用的限制 |
+| 本页不播放音频，也不声称这些应用保持音高 | 上述帮助页都没有跨应用的音高结论 | “不会变调 / chipmunk / 四家应用都做音高修正” |
 
 没有新增理解力、医学或「更快仍能听懂」的说法。
 
@@ -107,7 +114,43 @@ Contact 没有为了变长而加段落，没有新邮箱。
 node --test test/calculator.test.js
 ```
 
-2026-11-21 本批结果：14 项通过，0 项失败。没有新依赖。
+2026-11-21 首轮：14 项通过。2026-11-22 同一命令：15 项通过，0 项失败。新增的一项锁定 FAQ 来源句和 “Whole book at this speed”。原先 14 项没有失败。没有新依赖。
+
+## 发布清单（只含公开文件）
+
+哈希是 SHA-256，按 2026-11-22 本分支工作区字节计算。`docs/` 和 `test/` 不在此清单里，不要为了上线把它们当成站点页面。上传时要带上 `vercel.json`，否则 `/about` 这类无后缀路径可能对不上；它本身不是公开页面。
+
+| SHA-256 | 字节 | 文件 | 公开路径 |
+| --- | --- | --- | --- |
+| `9aaed308cf8424f8f601c2963a414fc55127a1c3df3e992ae22cb1536a1c6f2e` | 43231 | `index.html` | `/` |
+| `05ce7babab5d616b25d4bf9ba9a2be063f7c18cc161ce387d5c971a561a39c0f` | 7125 | `about.html` | `/about` |
+| `9047744ee1dcd4f41bca2618f5b216a1a1dbec500eacb9592e82f5c5852520a5` | 12109 | `privacy.html` | `/privacy` |
+| `18783022d8839469f106ea08ad43aab0e1af53c54b2547f70d7955f418c0e9c7` | 5972 | `contact.html` | `/contact` |
+| `658d9b1ec39f06590ed765c71140f87c08bf03ca35f0c8f337932ab4358191ee` | 6429 | `calculator.js` | `/calculator.js` |
+| `f0451571c1e9d7b56ba926736bf605bcea13c738f31b527f187f0e10d413416b` | 2933 | `analytics-choice.js` | `/analytics-choice.js` |
+| `97dd71eee030b6eefda245be3e6148877657ebdd8ec149165f021ff02b2ce29f` | 4503 | `theme.js` | `/theme.js` |
+| `8f654adf976f9764dfae55951ee4f14101212618599bbbfcb8e4e257985c2e05` | 1091 | `site.css` | `/site.css` |
+| `9f2880c34ab0df1aa951b847eba483fab268489332b3149e71c8e2b99dd91091` | 59 | `ads.txt` | `/ads.txt` |
+| `7b5cc70d46c4295b67775c259cbdf352165485c548e1aa28de0de2e8b4a080b7` | 82 | `robots.txt` | `/robots.txt` |
+| `04cd89d81a2e742a37bf966d64dde272dfa2ea5faa5dd8ea14d9716a36be40d3` | 669 | `sitemap.xml` | `/sitemap.xml` |
+| `0047424b786df91152aceb07e4fe0c1d24d6a6169db831cfe11a0eb1e9ac88a4` | 358 | `favicon.svg` | `/favicon.svg` |
+
+随包配置，不是公开页面：`vercel.json` SHA-256 `f91c66a44fb4186c4d6be9ae89d68c058f5c7abe811b20f60159302b96029c09`，50 字节。`cleanUrls` 为 true，`trailingSlash` 为 false。
+
+上线后把线上这些 URL 的响应体和上表逐字节对照。不一致就不要把它记成已发布。
+
+## 回滚
+
+2026-11-22 用 Vercel 只读接口核对了现网部署，没有改任何设置：
+
+- 部署 ID：`dpl_C8ChkaR9atKoqDjpFVzmDxdQVVAM`
+- 状态：READY，target 为 production
+- 创建时间：2026-11-10T04:55:51.394Z
+- 项目：`audiobook-speed-calculator`（`prj_svJW6P43c9VoOpB0NrHTPmJbOW9J`）
+- 别名包含 `audiobookspeedcalculator.net` 和 `www.audiobookspeedcalculator.net`
+- 返回记录里没有 git 源。Git 仍视为未绑定。合并本 PR 不会自动部署。
+
+若新的文件部署需要撤回，在 Vercel 里把生产别名重新指回 `dpl_C8ChkaR9atKoqDjpFVzmDxdQVVAM`。不要靠 git revert 代替这一步。这次没有执行回滚，也没有创建新部署。
 
 ## 生产检查：未执行
 
@@ -116,8 +159,8 @@ node --test test/calculator.test.js
 - 生产 HTTPS 上 `/`、`/about`、`/privacy`、`/contact`、`/robots.txt`、`/sitemap.xml`、`/ads.txt` 的状态码。
 - 生产首页 canonical 是否仍为 `https://audiobookspeedcalculator.net/`。
 - `www` 与 HTTP→HTTPS。规划里提到的 Pingora 500 只是旧环境观察，这里不把它记成线上故障，也不记成已修复。
-- 部署后的公开文件与本分支的逐字节对照。
-- 回滚用的部署 ID。没有部署，所以没有新的回滚点。
-- 申请审核。未点击。
+- 上表哈希与生产响应体的对照。
+- 新部署的 ID。没有部署，所以上面的 `dpl_C8ChkaR9atKoqDjpFVzmDxdQVVAM` 仍是当前生产，不是本分支的发布结果。
+- 申请审核。未点击。广告脚本未安装。
 
-上线若获批准，仍要用现有的文件部署方式，并在上线后补做上面几项。Git 未绑定，合并仓库不等于已经上线。
+上线若获批准，继续用现有的文件部署，然后补做上面几项。合并仓库不等于已经上线。这次改动也不保证 AdSense 会通过。
