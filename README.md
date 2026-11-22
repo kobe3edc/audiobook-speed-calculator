@@ -31,6 +31,7 @@ Listening time = original length ÷ speed. Time saved = original length − list
 | `favicon.svg` | Site icon |
 | `vercel.json` | Clean URLs so `/privacy` serves `privacy.html` |
 | `docs/before-adsense.md` | Operator checklist. It is not in the site navigation or sitemap. A static host may still serve the file URL; that is not a promise the URL is unreachable. |
+| `docs/batch1-qa.md` | Internal record of the first remediation batch. Same hosting caveat: not linked in the navigation or sitemap. |
 
 ## Stack
 

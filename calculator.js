@@ -147,16 +147,14 @@
     if (field === 'hours') {
       h = Math.min(LIMITS.hoursMax, Math.max(LIMITS.hoursMin, h + delta));
     } else if (field === 'minutes') {
-      m += delta;
-      if (m >= 60) {
-        h += Math.floor(m / 60);
-        m = m % 60;
-      }
-      if (m < 0) m = 0;
-      if (h > LIMITS.hoursMax) {
-        h = LIMITS.hoursMax;
-        m = LIMITS.minutesMax;
-      }
+      // Treat the stepper as a change to the whole duration.
+      // Clamping only the minute field made 2h 03m minus 5 minutes land on 2h 00m.
+      var total = h * 60 + m + delta;
+      var maxTotal = LIMITS.hoursMax * 60 + LIMITS.minutesMax;
+      if (total < 0) total = 0;
+      if (total > maxTotal) total = maxTotal;
+      h = Math.floor(total / 60);
+      m = total % 60;
     } else {
       return { ok: false };
     }
